@@ -13,8 +13,8 @@ export default function Header() {
   return (
     <Disclosure as="nav" className="">
       {({ open }) => (
-        <>
-          <div className="w-full ">
+        <div className="bg-black w-full fixed top-0 z-50">
+          <div className=" mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex-shrink-0">
                 <h1 className="text-red-300">Logo</h1>
@@ -202,7 +202,7 @@ export default function Header() {
               </div>
             </div>
           </Disclosure.Panel>
-        </>
+        </div>
       )}
     </Disclosure>
   );
