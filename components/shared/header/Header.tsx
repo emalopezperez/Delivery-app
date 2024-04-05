@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -10,10 +11,30 @@ function classNames(...classes: string[]) {
 }
 
 export default function Header() {
+  const [color, setColor] = useState(false);
+
+  const changeColor = () => {
+    if (window.scrollY > 90) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeColor);
+    return () => {
+      window.removeEventListener("scroll", changeColor);
+    };
+  }, []);
+
   return (
     <Disclosure as="nav" className="">
       {({ open }) => (
-        <div className="bg-black w-full fixed top-0 z-50">
+        <div
+          className={`w-full fixed top-0 z-20 transition-opacity duration-500  ${
+            color ? "bg-gray-50 text-black " : "bg-opacity-25 "
+          }`}>
           <div className=" mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex-shrink-0">
@@ -128,7 +149,7 @@ export default function Header() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="sm:hidden bg-black">
             <div className="space-y-1 px-2 pb-3 pt-2">
               <Disclosure.Button
                 as="a"

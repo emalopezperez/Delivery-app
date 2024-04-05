@@ -53,7 +53,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="  h-full lg:max-h-full max-h-[500px] w-full m-auto relative group mt-16">
+    <div className=" h-full lg:max-h-full max-h-[500px] w-full m-auto relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full bg-center bg-cover duration-500"></div>
@@ -69,17 +69,17 @@ const Hero = () => {
           className="w-full h-full bg-center bg-cover duration-500"></div>
       </div>
       <div
-        className="hidden group-hover:block absolute top-[40%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
+        className="hidden  group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
         onClick={prevSlide}>
         <MoveLeft />
       </div>
       <div
-        className="hidden group-hover:block absolute top-[40%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
+        className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
         onClick={nextSlide}>
         <MoveRight />
       </div>
 
-      <div className=" mx-auto max-w-2xl py-40  absolute inset-0 overflow-hidden after:absolute after:w-full after:h-full after:left-0 after:bottom-0">
+      <div className=" mx-auto max-w-2xl py-48  absolute inset-0 overflow-hidden after:absolute after:w-full after:h-full after:left-0 after:bottom-0">
         <div className="hidden sm:mb-8 sm:flex sm:justify-center ">
           <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20 ">
             Announcing our next round of funding.{" "}
